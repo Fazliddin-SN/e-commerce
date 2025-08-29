@@ -184,7 +184,7 @@ Skvalan, Osiyo sentellasi, o‘simlik ekstraktlari - namlantiruvchi va tinchlant
     category: "skin",
     price: 30000,
     originalPrice: null,
-    image: "product61.jpg",
+    image: "product-61.jpg",
     description: {
       uz: `Teringizni tinchlantirish va namlantirish uchun mukammal halqa! 🌿
 🧪 Fermentlangan Cica kompleks, ko‘p qatlamli Gialuron kislotasi va Aloe Vera – bu toner 217% tez namlikni yetkazib beradi!

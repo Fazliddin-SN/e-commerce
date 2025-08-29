@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-uz="Go'zallik do'koni" data-ru="Магазин красоты">Go'zallik do'koni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/fav-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <a class="logo" href="#main">
+            <img alt="Logo" src="images/logo.png">
+        </a>
+
+        <form class="search-box" onsubmit="return false;">
+            <input type="text" id="search-input" placeholder="Search Product's Here"
+                data-uz-placeholder="Mahsulotni qidiring..." data-ru-placeholder="Поиск товаров...">
+            <button type="button" onclick="performSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+
+        <div class="nav-btns">
+            <button class="nav-lang-btn" onclick="toggleLanguage()">
+                <i class="fa-solid fa-language"></i>
+                <span id="lang-indicator">RU</span>
+            </button>
+            <button class="nav-user" onclick="showAdminLogin()">
+                <i class="fa-regular fa-user"></i>
+            </button>
+            <button class="nav-cart" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <section id="main">
+        <div class="main-text">
+            <span data-uz="Yangi kolleksiya" data-ru="Новая коллекция">Yangi kolleksiya</span>
+            <h1>
+                <span data-uz="Go'zallik mahsulotlari" data-ru="Товары красоты">Go'zallik mahsulotlari</span>
+                <font data-uz="onlayn do'koni" data-ru="интернет-магазин">onlayn do'koni</font>
+            </h1>
+            <p data-uz="Eng sifatli kosmetika va go'zallik mahsulotlari bilan tanishing. Bizda har bir ayol va erkak uchun mos mahsulotlar mavjud."
+                data-ru="Познакомьтесь с самыми качественными косметическими товарами и товарами красоты. У нас есть подходящие товары для каждой женщины и мужчины.">
+                Eng sifatli kosmetika va go'zallik mahsulotlari bilan tanishing. Bizda har bir ayol va erkak uchun mos
+                mahsulotlar mavjud.
+            </p>
+            <a href="#new_products" data-uz="Hoziroq xarid qiling" data-ru="Купить сейчас">Hoziroq xarid qiling</a>
+        </div>
+        <div class="main-img">
+            <img alt="Main Img" src="images/main.png">
+        </div>
+    </section>
+
+    <!-- Product Grid 3 -->
+    <section class="product-grid-3">
+        <div class="product-grid-box product-grid-box1">
+            <img src="images/s1.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Tabiiy yashil loson" data-ru="Натуральный зеленый лосьон">Tabiiy yashil loson</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+
+        <div class="product-grid-box product-grid-box2">
+            <img src="images/s2.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="3 ta 1 da Novage losonlar" data-ru="3 в 1 лосьоны Novage">3 ta 1 da Novage
+                    losonlar</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+
+        <div class="product-grid-box product-grid-box3">
+            <img src="images/s3.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Oltin yuz yuvish va parfyum" data-ru="Золотое средство для умывания и духи">Oltin yuz
+                    yuvish va parfyum</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Products -->
+    <section id="new_products">
+        <div class="new-p-heading">
+            <h3 data-uz="Yangi mahsulotlar" data-ru="Новые товары">Yangi mahsulotlar</h3>
+            <ul>
+                <li class="filter-list active" data-filter="all" data-uz="Barchasi" data-ru="Все">Barchasi</li>
+                <li class="filter-list" data-filter="skin" data-uz="Teri" data-ru="Кожа">Teri</li>
+                <li class="filter-list" data-filter="makeup" data-uz="Bo'yanish" data-ru="Макияж">Bo'yanish</li>
+                <li class="filter-list" data-filter="nail" data-uz="Tirnoq" data-ru="Ногти">Tirnoq</li>
+            </ul>
+        </div>
+
+        <div class="new-product-container" id="products-container">
+            <!-- Products will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Product Grid Half -->
+    <section class="product-grid-half">
+        <div class="product-grid-box product-grid-box2">
+            <img src="images/h1.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Barcha turdagi bo'yanish" data-ru="Все виды макияжа">Barcha turdagi bo'yanish</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+
+        <div class="product-grid-box product-grid-box1">
+            <img src="images/s1.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Tabiiy loson" data-ru="Натуральный лосьон">Tabiiy loson</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+
+        <div class="product-grid-box product-grid-box3">
+            <img src="images/s3.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Oltin tabiiy loson" data-ru="Золотой натуральный лосьон">Oltin tabiiy loson</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section id="popular-product">
+        <div class="popular-heading">
+            <h3 data-uz="Mashhur mahsulotlar" data-ru="Популярные товары">Mashhur mahsulotlar</h3>
+            <a href="#new_products" data-uz="Barchasi" data-ru="Все">Barchasi</a>
+        </div>
+
+        <div class="popular-container" id="popular-container">
+            <!-- Popular products will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+    <section id="partner">
+        <div class="partner-heading">
+            <h3 data-uz="Bizning ishonchli hamkorlarimiz" data-ru="Наши надежные партнеры">Bizning ishonchli
+                hamkorlarimiz</h3>
+        </div>
+        <div class="logo-container">
+            <img alt="logo" src="images/logo-1.png">
+            <img alt="logo" src="images/logo-2.png">
+            <img alt="logo" src="images/logo-3.png">
+            <img alt="logo" src="images/logo-4.png">
+        </div>
+    </section>
+
+    <!-- Product Grid 2 -->
+    <section class="product-grid-2">
+        <div class="product-grid-box product-grid-box3">
+            <img src="images/g1.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Bo'yanish kolleksiyasi" data-ru="Коллекция макияжа">Bo'yanish kolleksiyasi</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+
+        <div class="product-grid-box product-grid-box2">
+            <img src="images/g2.jpg">
+            <div class="product-grid-text">
+                <strong data-uz="Chegirmadagi mahsulotlar" data-ru="Товары со скидкой">Chegirmadagi mahsulotlar</strong>
+                <span data-uz="Teri parvarishi mahsuloti" data-ru="Продукт по уходу за кожей">Teri parvarishi
+                    mahsuloti</span>
+                <a href="#new_products" data-uz="Xarid qiling" data-ru="Купить">Xarid qiling</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-company-box">
+                <a class="footer-logo" href="#main">BeautyShop</a>
+                <p data-uz="Go'zallik va parvarish sohasidagi eng yaxshi mahsulotlarni taklif qilamiz. Mijozlarimizning qoniqishi bizning asosiy maqsadimiz."
+                    data-ru="Мы предлагаем лучшие товары в области красоты и ухода. Удовлетворение наших клиентов - наша главная цель.">
+                    Go'zallik va parvarish sohasidagi eng yaxshi mahsulotlarni taklif qilamiz. Mijozlarimizning
+                    qoniqishi bizning asosiy maqsadimiz.
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-link-box">
+                <strong data-uz="Asosiy havolalar" data-ru="Основные ссылки">Asosiy havolalar</strong>
+                <ul>
+                    <li><a href="#main" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                    <li><a href="#new_products" data-uz="Mahsulotlar" data-ru="Товары">Mahsulotlar</a></li>
+                    <li><a href="#popular-product" data-uz="Mashhur" data-ru="Популярные">Mashhur</a></li>
+                    <li><a href="#partner" data-uz="Hamkorlar" data-ru="Партнеры">Hamkorlar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-link-box">
+                <strong data-uz="Mahsulotlarimiz" data-ru="Наши товары">Mahsulotlarimiz</strong>
+                <ul>
+                    <li><a href="#" data-uz="Teri parvarishi" data-ru="Уход за кожей">Teri parvarishi</a></li>
+                    <li><a href="#" data-uz="Soch parvarishi" data-ru="Уход за волосами">Soch parvarishi</a></li>
+                    <li><a href="#" data-uz="Tirnoq bo'yoqlari" data-ru="Лаки для ногтей">Tirnoq bo'yoqlari</a></li>
+                    <li><a href="#" data-uz="Ko'z chizuvchilar" data-ru="Подводки для глаз">Ko'z chizuvchilar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-link-box">
+                <strong data-uz="Aloqa" data-ru="Контакты">Aloqa</strong>
+                <ul>
+                    <li><span data-uz="Telefon: +998 90 123 45 67" data-ru="Телефон: +998 90 123 45 67">Telefon: +998 90
+                            123 45 67</span></li>
+                    <li><span>Email: info@beautyshop.uz</span></li>
+                    <li><span data-uz="Manzil: Toshkent, O'zbekiston" data-ru="Адрес: Ташкент, Узбекистан">Manzil:
+                            Toshkent, O'zbekiston</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="footer-owner" data-uz="BeautyShop tomonidan yaratilgan" data-ru="Создано BeautyShop">BeautyShop
+                tomonidan yaratilgan</span>
+            <span class="copyright" data-uz="© 2024 BeautyShop. Barcha huquqlar himoyalangan."
+                data-ru="© 2024 BeautyShop. Все права защищены.">© 2024 BeautyShop. Barcha huquqlar himoyalangan.</span>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-uz="Savatcha" data-ru="Корзина">Savatcha</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span data-uz="Jami:" data-ru="Итого:">Jami:</span>
+                <span id="cart-total">0 so'm</span>
+            </div>
+            <button class="checkout-btn" onclick="showCheckoutModal()" data-uz="Buyurtma berish"
+                data-ru="Оформить заказ">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('product-modal')">&times;</button>
+            <div id="product-details">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('checkout-modal')">&times;</button>
+            <div class="checkout-content">
+                <h2 data-uz="Buyurtma berish" data-ru="Оформление заказа">Buyurtma berish</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label data-uz="To'liq ismingiz *" data-ru="Полное имя *">To'liq ismingiz *</label>
+                        <input type="text" id="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Telefon raqamingiz *" data-ru="Номер телефона *">Telefon raqamingiz *</label>
+                        <input type="tel" id="customer-phone" required placeholder="+998 90 123 45 67">
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Manzilingiz *" data-ru="Ваш адрес *">Manzilingiz *</label>
+                        <textarea id="customer-address" required
+                            placeholder="Shahar, tuman, ko'cha va uy raqami"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Qo'shimcha ma'lumot (ixtiyoriy)"
+                            data-ru="Дополнительная информация (необязательно)">Qo'shimcha ma'lumot (ixtiyoriy)</label>
+                        <textarea id="order-notes" placeholder="Buyurtma haqida qo'shimcha ma'lumotlar..."></textarea>
+                    </div>
+                    <div class="order-summary" id="order-summary">
+                        <!-- Order items will be shown here -->
+                    </div>
+                    <div class="order-total-section">
+                        <h3>
+                            <span data-uz="Jami to'lov:" data-ru="Общая сумма:">Jami to'lov:</span>
+                            <span id="order-total">0 so'm</span>
+                        </h3>
+                    </div>
+                    <button type="submit" class="submit-order-btn" data-uz="Buyurtmani tasdiqlash"
+                        data-ru="Подтвердить заказ">Buyurtmani tasdiqlash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="admin-login-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('admin-login-modal')">&times;</button>
+            <div class="admin-login-content">
+                <h2 data-uz="Admin panelga kirish" data-ru="Вход в админ панель">Admin panelga kirish</h2>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label data-uz="Login:" data-ru="Логин:">Login:</label>
+                        <input type="text" id="admin-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Parol:" data-ru="Пароль:">Parol:</label>
+                        <input type="password" id="admin-password" required>
+                    </div>
+                    <button type="submit" data-uz="Kirish" data-ru="Войти">Kirish</button>
+                    <p class="login-hint">
+                        <small>Login: <strong>admin</strong> | Parol: <strong>beautyshop2024</strong></small>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="admin-panel">
+        <div class="admin-header">
+            <h2 data-uz="Admin Panel" data-ru="Админ Панель">Admin Panel</h2>
+            <button class="logout-btn" onclick="logoutAdmin()" data-uz="Chiqish" data-ru="Выход">Chiqish</button>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3 data-uz="Jami buyurtmalar" data-ru="Всего заказов">Jami buyurtmalar</h3>
+                    <span id="total-orders">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3 data-uz="Yangi buyurtmalar" data-ru="Новые заказы">Yangi buyurtmalar</h3>
+                    <span id="new-orders">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3 data-uz="Jami savdo" data-ru="Общие продажи">Jami savdo</h3>
+                    <span id="total-sales">0 so'm</span>
+                </div>
+            </div>
+
+            <div class="orders-section">
+                <h3 data-uz="Buyurtmalar ro'yxati" data-ru="Список заказов">Buyurtmalar ro'yxati</h3>
+                <div class="orders-filter">
+                    <select id="order-status-filter">
+                        <option value="all" data-uz="Barcha buyurtmalar" data-ru="Все заказы">Barcha buyurtmalar
+                        </option>
+                        <option value="pending" data-uz="Kutilmoqda" data-ru="Ожидается">Kutilmoqda</option>
+                        <option value="processing" data-uz="Jarayonda" data-ru="В процессе">Jarayonda</option>
+                        <option value="completed" data-uz="Bajarildi" data-ru="Выполнен">Bajarildi</option>
+                        <option value="cancelled" data-uz="Bekor qilindi" data-ru="Отменен">Bekor qilindi</option>
+                    </select>
+                </div>
+                <div class="orders-list" id="orders-list">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="success-message">
+        <div class="success-content">
+            <i class="fa-solid fa-check-circle"></i>
+            <span id="success-text"></span>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
